@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -15,6 +16,16 @@ namespace BookManagement
             //  .AddInfrastructureServices(configuration)
             //  .AddApiServices(configuration);
             return services;
+        }
+
+        public static IApplicationBuilder UseBookManagementModule(this IApplicationBuilder app)
+        {
+            // Configure the HTTP request pipeline.
+            //app
+            //  .AddApplicationServices()
+            //  .AddInfrastructureServices(configuration)
+            //  .AddApiServices(configuration);
+            return app;
         }
     }
 }

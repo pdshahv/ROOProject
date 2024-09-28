@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace Borrowing
@@ -14,6 +15,16 @@ namespace Borrowing
             //  .AddInfrastructureServices(configuration)
             //  .AddApiServices(configuration);
             return services;
+        }
+
+        public static IApplicationBuilder UseBorrowingModule(this IApplicationBuilder app)
+        {
+            // Configure the HTTP request pipeline.
+            //app
+            //  .AddApplicationServices()
+            //  .AddInfrastructureServices(configuration)
+            //  .AddApiServices(configuration);
+            return app;
         }
     }
 }

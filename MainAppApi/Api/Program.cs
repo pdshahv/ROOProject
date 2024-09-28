@@ -1,7 +1,4 @@
 
-using BookManagement;
-using Borrowing;
-using UserManagement;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -13,4 +10,9 @@ builder.Services
 
 var app = builder.Build();
 // Configure the HTTP request pipeline
+
+app.
+    UseBookManagementModule()
+    .UseUserManagementModule()
+    .UseBorrowingModule();
 app.Run();
