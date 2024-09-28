@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BookManagement
 {
-    public static class BookManagementModule
+    public static class BooksCatalogModule
     {
         public static IServiceCollection AddBookManagementModule(this IServiceCollection services,
             IConfiguration configuration)
