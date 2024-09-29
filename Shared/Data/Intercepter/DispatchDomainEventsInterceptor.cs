@@ -27,11 +27,11 @@ namespace Shared.Data.Intercepter
 
             var aggregates = context.ChangeTracker
                             .Entries<IAggregate>()
-                            .Where(a => a.Entity.DelayedBorrowEvents.Any())
+                            .Where(a => a.Entity.DomainEvents.Any())
                             .Select(a => a.Entity);
 
             var domainEvents = aggregates
-                .SelectMany(a=>a.DelayedBorrowEvents)
+                .SelectMany(a=>a.DomainEvents)
                 .ToList();
 
             aggregates.ToList().ForEach(a => a.ClearDomainEvents());

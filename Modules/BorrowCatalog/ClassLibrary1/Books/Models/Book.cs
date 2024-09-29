@@ -23,6 +23,8 @@ namespace BooksCatalog.Books.Models
                 Description = _description
             };
 
+            book.AddDomainEvent(new BookCreatedEvent(book));
+
             return book;
         }
 
@@ -36,7 +38,7 @@ namespace BooksCatalog.Books.Models
                 Name = _name
             };
 
-            book.AddBorrowEvent(new BookBorrowEvent(book));
+            book.AddDomainEvent(new BookBorrowEvent(book));
             return book;
         }
 

@@ -8,25 +8,41 @@ namespace Shared.DDD
 {
     public abstract class Aggregate<TId> : Entity<TId> , IAggregate<TId>
     {
-        private readonly List<IDomainEvent> _borrowEvents = new();
-        private readonly List<IDomainEvent> _delayedborrowEvents = new();
-        public IReadOnlyList<IDomainEvent> borrowEvents => _borrowEvents.AsReadOnly();
+        private readonly List<IDomainEvent> _domainEvents = new();
+        //private readonly List<IDomainEvent> _createEvents = new();
+        //private readonly List<IDomainEvent> _borrowEvents = new();
+       // private readonly List<IDomainEvent> _delayedborrowEvents = new();
 
-        public IReadOnlyList<IDomainEvent> DelayedBorrowEvents => _borrowEvents.AsReadOnly();
+        //public IReadOnlyList<IDomainEvent> createEvents => _createEvents.AsReadOnly();
+        //public IReadOnlyList<IDomainEvent> borrowEvents => _borrowEvents.AsReadOnly();
 
-        public void DeplayedBorrowEvent(IDomainEvent borrowEvent)
+        //public IReadOnlyList<IDomainEvent> delayedBorrowEvents => _borrowEvents.AsReadOnly();
+
+        public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
+        //public void DeplayedBorrowEvent(IDomainEvent borrowEvent)
+        //{
+        //    _delayedborrowEvents.Add(borrowEvent);
+        //}
+        //public void AddBorrowEvent(IDomainEvent borrowEvent)
+        //{
+        //    _borrowEvents.Add(borrowEvent);
+        //}
+
+        //public void AddCreateEvent(IDomainEvent createEvent)
+        //{
+        //    _createEvents.Add(createEvent);
+        //}
+        public void AddDomainEvent(IDomainEvent domainEvents)
         {
-            _delayedborrowEvents.Add(borrowEvent);
+            _domainEvents.Add(domainEvents);
         }
-        public void AddBorrowEvent(IDomainEvent borrowEvent)
-        {
-            _borrowEvents.Add(borrowEvent);
-        }
+
 
         public IDomainEvent[] ClearBorrowEvents()
         {
-            IDomainEvent[] dequeuedEvents = _borrowEvents.ToArray();
-            _borrowEvents.Clear();
+            IDomainEvent[] dequeuedEvents = _domainEvents.ToArray();
+            _domainEvents.Clear();
             return dequeuedEvents;
         }
 
