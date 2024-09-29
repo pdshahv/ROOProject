@@ -4,15 +4,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services
-    .AddBookManagementModule(builder.Configuration)
+    .AddBookCatalogModule(builder.Configuration)
     .AddBorrowingModule(builder.Configuration)
-    .AddUserManagementModule(builder.Configuration);
+    .AddUserCatalogModule(builder.Configuration);
 
 var app = builder.Build();
 // Configure the HTTP request pipeline
 
 app.
-    UseBookManagementModule()
-    .UseUserManagementModule()
+    UseBookCatalogModule()
+    .UseUserCatalogModule()
     .UseBorrowingModule();
 app.Run();

@@ -7,9 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Modules\BorrowCatalog\ClassLibrary1\BookManagement.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\BorrowCatalog\ClassLibrary1\BooksCatalog.csproj" />
     <ProjectReference Include="..\..\Modules\Borrowing\Borrowing\Borrowing.csproj" />
-    <ProjectReference Include="..\..\Modules\UserManagement\UserManagement\UserManagement.csproj" />
+    <ProjectReference Include="..\..\Modules\UserManagement\UserManagement\UserCatalog.csproj" />
   </ItemGroup>
 
 </Project>

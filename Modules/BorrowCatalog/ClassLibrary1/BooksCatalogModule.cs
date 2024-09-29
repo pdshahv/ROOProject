@@ -1,31 +1,41 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BooksCatalog.Data;
+using BooksCatalog.Data.Seed;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Data.Intercepter;
 
 
 namespace BookManagement
 {
     public static class BooksCatalogModule
     {
-        public static IServiceCollection AddBookManagementModule(this IServiceCollection services,
+        public static IServiceCollection AddBookCatalogModule(this IServiceCollection services,
             IConfiguration configuration)
         {
             // Add services to the container.
-            //services
-            //  .AddApplicationServices()
-            //  .AddInfrastructureServices(configuration)
-            //  .AddApiServices(configuration);
+            // Data
+            var connectionString = configuration.GetConnectionString("Database");
+            services.AddDbContext<BooksCatalogDBContext>(options =>
+            {
+                options.AddInterceptors(new LogEntityInterceptors());
+
+                options.UseSqlServer(connectionString);
+            }
+                          );
+
+            services.AddScoped<IDataSeeder, BooksCatalogDataSeeder>();
             return services;
         }
 
-        public static IApplicationBuilder UseBookManagementModule(this IApplicationBuilder app)
+        public static IApplicationBuilder UseBookCatalogModule(this IApplicationBuilder app)
         {
             // Configure the HTTP request pipeline.
-            //app
-            //  .AddApplicationServices()
-            //  .AddInfrastructureServices(configuration)
-            //  .AddApiServices(configuration);
+            app.UseMigration<BooksCatalogDBContext>();
+
             return app;
         }
+
     }
 }

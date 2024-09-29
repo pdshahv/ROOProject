@@ -11,17 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0835C4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "MainAppApi\Api\Api.csproj", "{4F9896BC-F8F5-4EFA-9501-67CA5048ED6E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookManagement", "BookManagement", "{E10FFAB4-409A-46BC-9110-40E7EF75EDCA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BooksCatalog", "BooksCatalog", "{E10FFAB4-409A-46BC-9110-40E7EF75EDCA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagement", "UserManagement", "{E9678360-F9FD-4E49-B349-06DF1300AB98}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserCatalog", "UserCatalog", "{E9678360-F9FD-4E49-B349-06DF1300AB98}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Borrowing", "Borrowing", "{B18C6847-C1AB-47CD-AA46-195F2C17A3E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BorrowedCatalog", "BorrowedCatalog", "{B18C6847-C1AB-47CD-AA46-195F2C17A3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement", "Modules\BorrowCatalog\ClassLibrary1\BookManagement.csproj", "{1044DB55-A3A6-43DC-BACA-263E5A20ACE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksCatalog", "Modules\BorrowCatalog\ClassLibrary1\BooksCatalog.csproj", "{1044DB55-A3A6-43DC-BACA-263E5A20ACE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Borrowing", "Modules\Borrowing\Borrowing\Borrowing.csproj", "{DE37EAE5-5830-4A2D-9345-C26B9CB2AC17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement", "Modules\UserManagement\UserManagement\UserManagement.csproj", "{5A625882-4FE4-48EE-B0F2-3185A5A323EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserCatalog", "Modules\UserManagement\UserManagement\UserCatalog.csproj", "{5A625882-4FE4-48EE-B0F2-3185A5A323EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{21382BC0-3C91-4C2C-B78A-261781D52B41}"
 EndProject

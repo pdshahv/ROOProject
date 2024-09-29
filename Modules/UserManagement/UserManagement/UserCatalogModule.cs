@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace UserManagement
 {
-    public static class UserManagementModule
+    public static class UserCatalogModule
     {
-             public static IServiceCollection AddUserManagementModule(this IServiceCollection services,
+             public static IServiceCollection AddUserCatalogModule(this IServiceCollection services,
             IConfiguration configuration)
         {
             // Add services to the container.
@@ -17,7 +17,7 @@ namespace UserManagement
             return services;
         }
 
-        public static IApplicationBuilder UseUserManagementModule(this IApplicationBuilder app)
+        public static IApplicationBuilder UseUserCatalogModule(this IApplicationBuilder app)
         {
             // Configure the HTTP request pipeline.
             //app
