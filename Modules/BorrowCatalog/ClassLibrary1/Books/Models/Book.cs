@@ -10,6 +10,7 @@ namespace BooksCatalog.Books.Models
 {
     public class Book : Aggregate<Guid>
     {
+
         public string Name { get; set; } = default!;
         public string Description { get; set; }
 
