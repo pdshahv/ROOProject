@@ -1,12 +1,9 @@
 ﻿using BooksCatalog.Data;
 using BooksCatalog.Data.Seed;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Shared.Data.Intercepter;
-using System.Reflection;
+
 
 
 namespace BookManagement

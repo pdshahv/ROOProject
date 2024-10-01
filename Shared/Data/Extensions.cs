@@ -8,6 +8,8 @@ namespace Shared.Data
 {
     public static class Extensions
     {
+
+        //allow migrate on project startup
         public static IApplicationBuilder UseMigration<TContext>(this IApplicationBuilder app) where TContext : DbContext
         {
             MigrateDatabaseAsync<TContext>(app.ApplicationServices).GetAwaiter().GetResult(); 
@@ -24,6 +26,7 @@ namespace Shared.Data
             await context.Database.MigrateAsync();
         }
 
+        //seed data on startup
         private static async Task SeedDataAsync(IServiceProvider serviceProvider)
         {
             using var scope = serviceProvider.CreateScope();
