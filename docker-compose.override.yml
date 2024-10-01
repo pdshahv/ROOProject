@@ -1,0 +1,27 @@
+services:
+  librarydb:
+    container_name: librarydb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=LibraryIdentityDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - libraryidentitydb:/var/lib/postgresql/data
+  identity:
+    container_name: identity
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_DB =postgres
+      - KC_DB_URL=jdbc:postgresql://libraryidentitydb/LibraryIdentityDb?currentSchema=identity
+      - KC_DB_USERNAME=postgres
+      - KC_DB_PASSWORD=postgres
+    restart:  always
+    ports:
+      - "9090:8080"
+    command:
+      - start-dev
+

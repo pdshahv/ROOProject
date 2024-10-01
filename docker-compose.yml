@@ -1,0 +1,8 @@
+services:
+  librarydb:
+    image: postgres
+  identity:
+    image: quay.io/keycloak/keycloak:24.0.3
+volumes:
+  libraryidentitydb:
+
