@@ -1,4 +1,5 @@
 ﻿using BooksCatalog.Books.Dtos;
+using BooksCatalog.Books.Exceptions;
 using BooksCatalog.Data;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,13 @@ namespace BooksCatalog.Books.Features.GetBooksByName
     {
         public async Task<GetBooksByNameResult> Handle(GetBooksByNameQuery query, CancellationToken cancellationToken)
         {
-           //get book by name
+            //get book by name
+            var book = await dbContext.Books.FindAsync([query.bookname], cancellationToken: cancellationToken);
+
+            if (book is null)
+            {
+                throw new BookNotFoundException(query.bookname);
+            }
 
             var books = await dbContext.Books
                     .AsNoTracking()

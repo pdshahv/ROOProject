@@ -1,5 +1,6 @@
 ﻿using BooksCatalog.Data;
 using BooksCatalog.Data.Seed;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Shared.Data.Intercepter;
@@ -16,10 +17,7 @@ namespace BookManagement
             // Add services to the container.
 
             // Application Use Case services
-            services.AddMediatR(config =>
-            {
-                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-            });
+
             // Data
             var connectionString = configuration.GetConnectionString("Database");
 

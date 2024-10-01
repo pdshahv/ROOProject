@@ -6,6 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="LibBorrow\Features\NewBorrow\NewFolder\**" />
+    <EmbeddedResource Remove="LibBorrow\Features\NewBorrow\NewFolder\**" />
+    <None Remove="LibBorrow\Features\NewBorrow\NewFolder\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -13,5 +18,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
+    <Folder Include="LibBorrow\Exceptions\" />
+    <Folder Include="LibBorrow\EventHandlers\" />
+    <Folder Include="LibBorrow\Features\BorrowItem\" />
+    <Folder Include="LibBorrow\Features\GetBorrowed\" />
+    <Folder Include="LibBorrow\Features\ReturnBorrow\" />
   </ItemGroup>
 </Project>

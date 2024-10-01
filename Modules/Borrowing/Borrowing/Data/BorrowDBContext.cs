@@ -9,8 +9,8 @@ namespace Borrowing.Data
     {
         public BorrowDBContext(DbContextOptions<BorrowDBContext> options) : base(options) { }
 
-        public DbSet<BorrowEntry> BorrowEntries => Set<BorrowEntry>();
-        public DbSet<BorrowEntriesItem>  borrowEntriesItems => Set<BorrowEntriesItem>();
+        public DbSet<BorrowList> BorrowEntries => Set<BorrowList>();
+        public DbSet<BorrowListItem>  borrowEntriesItems => Set<BorrowListItem>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

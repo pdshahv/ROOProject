@@ -24,7 +24,7 @@ namespace BooksCatalog.Books.Models
                 Description = _description
             };
 
-            book.AddDomainEvent(new BookCreatedEvent(book));
+            //book.AddDomainEvent(new BookCreatedEvent(book));
 
             return book;
         }

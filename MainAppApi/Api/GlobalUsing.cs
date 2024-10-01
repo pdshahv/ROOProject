@@ -3,3 +3,8 @@ global using Borrowing;
 global using UserManagement;
 global using Carter;
 global using Shared.Extensions;
+global using Serilog;
+global using FluentValidation;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Shared.Behaviours;
+global using static System.Net.Mime.MediaTypeNames;

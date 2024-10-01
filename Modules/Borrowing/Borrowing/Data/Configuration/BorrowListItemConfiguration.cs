@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Borrowing.Data.Configuration
 {
-    public class BorrowEntriesItemConfiguration : IEntityTypeConfiguration<BorrowEntriesItem>
+    public class BorrowListItemConfiguration : IEntityTypeConfiguration<BorrowListItem>
     {
 
 
-        public void Configure(EntityTypeBuilder<BorrowEntriesItem> builder)
+        public void Configure(EntityTypeBuilder<BorrowListItem> builder)
         {
             builder.Property(oi => oi.BookId).IsRequired();
             builder.Property(oi => oi.BorrowEntryId).IsRequired();

@@ -1,6 +1,7 @@
 ﻿
 using BooksCatalog.Books.Dtos;
 using BooksCatalog.Data;
+using FluentValidation;
 
 namespace BooksCatalog.Books.Features.CreateBook
 {
@@ -9,7 +10,14 @@ namespace BooksCatalog.Books.Features.CreateBook
         :ICommand<CreateBookResult>;
 
     public record CreateBookResult(Guid Id);
-  
+
+    public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
+    {
+        public CreateBookCommandValidator()
+        {
+            RuleFor(x => x.Book.Name).NotEmpty().WithMessage("Name is required");
+        }
+    }
     internal class CreateBookHandler(BooksCatalogDBContext dBContext)
         :ICommandHandler<CreateBookCommand,CreateBookResult>
     {

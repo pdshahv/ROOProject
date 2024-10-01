@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Shared.Data.Intercepter;
 using Shared.Data;
+using FluentValidation;
+using System.Reflection;
 namespace Borrowing
 {
     public static class Borrowingmodule
@@ -16,7 +18,12 @@ namespace Borrowing
         {
             // Add services to the container.
 
-
+            // Application Use Case service
+            services.AddMediatR(config =>
+            {
+                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            });
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             // Data infra layer
             var connectionString = configuration.GetConnectionString("Database");
 
